@@ -63,6 +63,6 @@ public class PostgresDbContext : DbContext
     {
         options.LogTo(action: Console.WriteLine, minimumLevel: LogLevel.Information);
         options.UseNpgsql(
-            "User ID=test;Password=test;Server=localhost;Port=5432;Database=dev; Integrated Security=true;Pooling=true;IncludeErrorDetail=true;");
+            "User ID=;Password=;Server=localhost;Port=5432;Database=db;Pooling=true;IncludeErrorDetail=true;");
     }
 }
