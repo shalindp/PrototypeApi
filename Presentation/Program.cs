@@ -30,14 +30,12 @@ var app = builder.Build();
 {
     // app.Urls.Add("http://localhost:6969");
     // app.Urls.Add("localhost:5000");
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
+    // if (app.Environment.IsDevelopment())
+    // {
+    app.UseSwagger();
+    app.UseSwaggerUI();
+    // }
 
-  
-    
     // app.UseHttpsRedirection();
     
     app.UseCors(devCorsPolicy);
