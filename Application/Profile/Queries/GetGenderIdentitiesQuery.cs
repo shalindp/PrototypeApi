@@ -5,6 +5,7 @@ using LanguageExt.Common;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence.PostgresSql;
+using PrototypeBackend.Entities;
 
 namespace Application.Profile.Queries;
 
@@ -24,7 +25,10 @@ public struct GetGenderIdentitiesQuery : IRequest<Result<IEnumerable<GenderIdent
         public async Task<Result<IEnumerable<GenderIdentityDto>>> Handle(GetGenderIdentitiesQuery request,
             CancellationToken cancellationToken)
         {
-            var genderIdentityEntities = await _postgresDbContext.Genders.ToListAsync(cancellationToken: cancellationToken);
+            var genderIdentityEntities = await _postgresDbContext.Genders
+                .Where(c=> c.Status == Status.Active) 
+                .OrderByDescending(c=>c.SortOrder)
+                .ToListAsync(cancellationToken: cancellationToken);
 
             return new Result<IEnumerable<GenderIdentityDto>>(GenderIdentityDtoMapper.Map(genderIdentityEntities));
         }

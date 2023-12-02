@@ -4,4 +4,5 @@ public struct GenderIdentityResponse
 {
     public int GenderIdentityId { get; set; }
     public string Value { get; set; }
+    public int SortOrder { get; set; }
 }

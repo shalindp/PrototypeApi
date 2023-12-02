@@ -9,4 +9,5 @@ public class InterestEntity: BaseEntity
     
     [MaxLength(100)]
     public string Value { get; set; } = null!;
+    public int SortOrder { get; set; }
 }

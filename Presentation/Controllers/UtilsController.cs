@@ -7,8 +7,8 @@ namespace Presentation.Controllers;
 public class UtilsController : ControllerBase
 {
     [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-    [HttpGet(nameof(Ping))]
-    public IActionResult Ping()
+    [HttpGet(nameof(Health))]
+    public IActionResult Health()
     {
         return new OkObjectResult(new { Server = "Ok" });
     }

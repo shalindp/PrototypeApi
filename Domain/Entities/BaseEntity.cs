@@ -9,8 +9,7 @@ public abstract class BaseEntity
 
 public enum Status
 {
-    Active = 1,
-    Disabled = 2,
-    Deleted = 3,
-    Revoked = 4,
+    Active = 0,
+    Deleted = 1,
+    Disabled = 2
 }

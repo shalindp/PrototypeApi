@@ -9,4 +9,6 @@ public class GenderIdentityEntity: BaseEntity
     
     [MaxLength(100)]
     public string Value { get; set; } = null!;
+    
+    public int SortOrder { get; set; }
 }
